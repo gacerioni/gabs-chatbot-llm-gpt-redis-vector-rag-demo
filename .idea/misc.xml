@@ -4,4 +4,7 @@
     <option name="sdkName" value="Python 3.9 (gabs-chatbot-llm-gpt-redis-vector-rag-demo)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (gabs-chatbot-llm-gpt-redis-vector-rag-demo)" project-jdk-type="Python SDK" />
+  <component name="PyPackaging">
+    <option name="earlyReleasesAsUpgrades" value="true" />
+  </component>
 </project>

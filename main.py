@@ -107,11 +107,11 @@ def get_prompt(model, query):
             context += movie + "\n"
 
     if len(context) > 0:
-        prompt = '''Use the provided information to answer the search query the user has sent.
-            The information in the database provides three movies, choose the one or the ones that fit most.
-            If you can't answer the user's question, say "Sorry, I am unable to answer the question, try to refine your question". Do not guess. You must deduce the answer exclusively from the information provided. 
-            The answer must be formatted in markdown or HTML.
-            Do not make things up. Do not add personal opinions. Do not add any disclaimer.
+        prompt = '''Use the provided information to answer the search query the user has sent. The information in the 
+        database provides three movies, choose the one or the ones that fit most. If you can't answer the user's 
+        question, say "Sorry, I am unable to answer the question, try to refine your question". Do not guess. You 
+        must deduce the answer exclusively from the information provided. The answer must be formatted in markdown or 
+        HTML. Do not make things up. Do not add personal opinions. Do not add any disclaimer.
 
             Search query: 
 
@@ -127,7 +127,9 @@ def get_prompt(model, query):
 
 def getOpenAIGPT35(prompt):
     # Define the system message
-    system_msg = 'You are a smart and knowledgeable AI assistant with expertise in all kinds of movies. You are a very friendly and helpful AI. You are empowered to recommend movies based on the provided context. Do NOT make anything up. Do NOT engage in topics that are not about movies.';
+    system_msg = ('You are a smart and knowledgeable AI assistant with expertise in all kinds of movies. You are a '
+                  'very friendly and helpful AI. You are empowered to recommend movies based on the provided context. '
+                  'Do NOT make anything up. Do NOT engage in topics that are not about movies.')
 
     encoding = tiktoken.encoding_for_model("gpt-3.5-turbo-0613")
     # print("tokens: " + str(num_tokens_from_string(prompt, "cl100k_base")))
