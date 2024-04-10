@@ -84,7 +84,7 @@ def get_prompt(model, query):
     q = Query("@embedding:[VECTOR_RANGE $radius $vec]=>{$YIELD_DISTANCE_AS: score}") \
         .sort_by("score", asc=True) \
         .return_fields("overview", "names", "score", "$.crew", "$.genre", "$.score") \
-        .paging(0, 3) \
+        .paging(0, 5) \
         .dialect(2)
 
     # Find all vectors within VSS_MINIMUM_SCORE of the query vector
@@ -174,9 +174,9 @@ def main():
     """Main function to orchestrate the operations."""
     # Load movies, create index, and generate embeddings as needed
     # Uncomment the following lines if running for the first time or when needed:
-    #load()
-    #create_index()
-    #create_embeddings()
+    load()
+    create_index()
+    create_embeddings()
 
     render()
 
